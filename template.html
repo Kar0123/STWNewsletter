@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+
+<meta charset="utf-8">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1">
+
+<title>{{ site }}</title>
+
+<style>
+
+body{
+margin:0;
+padding:0;
+background:#f5f6fa;
+font-family:Segoe UI,Arial,sans-serif;
+line-height:1.6;
+}
+
+.container{
+max-width:700px;
+margin:auto;
+padding:15px;
+}
+
+.hero{
+background:linear-gradient(
+135deg,
+#8e44ad,
+#6c3483
+);
+
+color:white;
+padding:30px;
+border-radius:20px;
+margin-bottom:20px;
+}
+
+.card{
+background:white;
+border-radius:16px;
+padding:22px;
+margin-bottom:16px;
+box-shadow:
+0 3px 10px rgba(0,0,0,.08);
+}
+
+.card h2{
+margin-top:0;
+color:#8e44ad;
+}
+
+.button{
+
+display:inline-block;
+
+padding:10px 16px;
+
+background:#8e44ad;
+
+color:white;
+
+text-decoration:none;
+
+border-radius:8px;
+
+font-weight:600;
+}
+
+.footer{
+text-align:center;
+color:#777;
+padding:20px;
+}
+
+@media(max-width:768px){
+
+.hero{
+padding:20px;
+}
+
+.hero h1{
+font-size:28px;
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="hero">
+
+<h1>{{ site }}</h1>
+
+<p>{{ today }}</p>
+
+<p>{{ tagline }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>😊 One-Line Smile</h2>
+
+<p>{{ smile }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌤 Sutton Weather</h2>
+
+<p>{{ weather }}</p>
+
+</div>
+
+{% for section in sections %}
+
+<div class="card">
+
+<h2>{{ section.heading }}</h2>
+
+<h3>{{ section.title }}</h3>
+
+<p>{{ section.commentary }}</p>
+
+<a
+class="button"
+href="{{ section.link }}"
+target="_blank">
+
+Read Full Story →
+
+</a>
+
+</div>
+
+{% endfor %}
+
+<div class="card">
+
+<h2>❤️ Community Corner</h2>
+
+<p>{{ spotlight }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>☕ Chai Chat</h2>
+
+<p>{{ question }}</p>
+
+</div>
+
+<div class="card">
+
+<h2>🌈 Thought For Today</h2>
+
+<p>{{ thought }}</p>
+
+</div>
+
+<div class="footer">
+
+{{ site }}
+
+<br>
+
+Learn • Share • Grow
+
+</div>
+
+</div>
+
+</body>
+</html>
