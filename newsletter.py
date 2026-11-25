@@ -745,7 +745,7 @@ body {{
     today=TODAY,
     body=body
 )
-html_file = OUTPUT / "newsletter.html"
+html_file = OUTPUT / "index.html"
 
 with open(
     html_file,
@@ -861,5 +861,5 @@ with open(
 
     f.write(whatsapp)
 
-print("✅ newsletter.html generated")
+print("✅ index.html generated")
 print("✅ whatsapp_digest.txt generated")
