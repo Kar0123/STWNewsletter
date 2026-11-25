@@ -745,7 +745,7 @@ body {{
     today=TODAY,
     body=body
 )
-html_file = OUTPUT / "index.html"
+html_file = Path("index.html")
 
 with open(
     html_file,
@@ -772,11 +772,9 @@ try:
         )
 
         page.screenshot(
-            path=str(
-                OUTPUT / "newsletter.png"
-            ),
-            full_page=True
-        )
+    		path="newsletter.png",
+    		full_page=True
+	)
 
         browser.close()
 
