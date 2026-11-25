@@ -1,0 +1,39 @@
+name: Daily Newsletter
+
+on:
+
+  schedule:
+    - cron: "30 6 * * *"
+
+  workflow_dispatch:
+
+*obs:
+
+  build:
+
+    runs-on: ubunt*-latest
+
+    steps:
+
+      - name:*Checkout
+        uses: actions/che*kout@v4
+
+      - name: Setup Pytho*
+        uses: actions/setup-pytho*@v5
+        with:
+          python*version: "3.11"
+
+      - name: Ins*all Requirements
+        run: |
+*         pip install -r requiremen*s.txt
+
+      - name: Generate News*etter
+        run: |
+          pyt*on newsletter.py
+
+      - name: Se*d Email
+        env:
+          EMA*L_USER: ${{ secrets.EMAIL_USER }}
+*         EMAIL_PASSWORD: ${{ secre*s.EMAIL_PASSWORD }}
+        run: |*          python send_email.py
+```*
