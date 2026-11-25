@@ -21,7 +21,9 @@ jobs:
       - name: Install Requirements
         run: |
           pip install -r requirements.txt
-
+      - name: Install Playwright Browser
+        run: |
+          playwright install chromium
       - name: Generate Newsletter
         run: |
           python newsletter.py
