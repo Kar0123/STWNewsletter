@@ -789,28 +789,68 @@ except Exception as e:
     )
 whatsapp = f"""
 ☕ *STW Coffee Club*
-
 📅 {TODAY}
+"""
 
-😊 {random.choice(DATA['smiles'])}
+if nhs:
+    whatsapp += f"""
 
-🌤 {weather()}
+🏥 *Health & Wellbeing*
 
-😄 {random.choice(DATA['uk_indian_moments'])}
+{nhs['title']}
 
-💷 {random.choice(DATA['worth_knowing'])}
+🔗 {nhs['link']}
+"""
+
+if surrey:
+    whatsapp += f"""
+
+📍 *Around Sutton*
+
+{surrey['title']}
+
+🔗 {surrey['link']}
+"""
+
+for story in top_uk:
+    whatsapp += f"""
+
+🇬🇧 *UK Headline*
+
+{story['title']}
+
+🔗 {story['link']}
+"""
+
+if india:
+    whatsapp += f"""
+
+🇮🇳 *India News*
+
+{india['title']}
+
+🔗 {india['link']}
+"""
+
+if money:
+    whatsapp += f"""
+
+💷 *Money Saving*
+
+{money['title']}
+
+🔗 {money['link']}
+"""
+
+whatsapp += f"""
 
 ☕ Chai Chat
 
 {random.choice(DATA['questions'])}
 
-🎯 Today's Challenge
+🎯 Challenge
 
 {random.choice(DATA['challenges'])}
-
-🌈 Thought
-
-{random.choice(DATA['thoughts'])}
 """
 
 with open(
