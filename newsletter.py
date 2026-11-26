@@ -6,15 +6,16 @@ import re
 
 from pathlib import Path
 from datetime import datetime
+from datetime import datetime
+from zoneinfo import ZoneInfo
 
 OUTPUT = Path("output")
 OUTPUT.mkdir(exist_ok=True)
 
 SITE_NAME = "☕ STW Coffee Club"
 
-TODAY = datetime.now().strftime(
-    "%A, %d %B %Y"
-)
+uk_time = datetime.now(ZoneInfo("Europe/London"))
+TODAY = uk_time.strftime("%A, %d %B %Y")
 
 LAT = 51.3618
 LON = -0.1945
