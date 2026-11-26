@@ -10,7 +10,7 @@ EMAIL = os.environ["EMAIL_USER"]
 PASSWORD = os.environ["EMAIL_PASSWORD"]
 
 with open(
-    "output/newsletter.html",
+    "index.html",
     "r",
     encoding="utf8"
 ) as f:
